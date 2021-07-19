@@ -1,43 +1,10 @@
-For the latest information about ZooKeeper, please visit our website at:
+# 一致性选主原理
 
-   http://zookeeper.apache.org/
+如下是一致性选主的泳道图，其中涉及到类都有源码注释，因为一次提交了过多的源码，步骤分析我会慢慢给补上。
+![](https://gitee.com/onlycreator/draw/raw/master/img/%E9%80%89%E4%B8%BB%E6%B3%B3%E9%81%93%E5%9B%BE.png)
 
-and our wiki, at:
+# ZAB数据一致性同步
 
-   https://cwiki.apache.org/confluence/display/ZOOKEEPER
+如下是ZAB数据一致性同步泳道图，其中涉及到类都有源码注释，因为一次提交了过多的源码，步骤分析我会慢慢给补上。
 
-Full documentation for this release can also be found in docs/index.html
-
----------------------------
-Packaging/release artifacts - Maven
-
-    A buildable tarball is located under zookeeper/target/ directory
-
-    The artifacts for the modules are uploaded to maven central.
-
-
-Packaging/release artifacts - Ant
-
-The release artifact contains the following jar file at the toplevel:
-
-zookeeper-<version>.jar         - legacy jar file which contains all classes
-                                  and source files. Prior to version 3.3.0 this
-                                  was the only jar file available. It has the 
-                                  benefit of having the source included (for
-                                  debugging purposes) however is also larger as
-                                  a result
-
-The release artifact contains the following jar files in "dist-maven" directory:
-
-zookeeper-<version>.jar         - bin (binary) jar - contains only class (*.class) files
-zookeeper-<version>-sources.jar - contains only src (*.java) files
-zookeeper-<version>-javadoc.jar - contains only javadoc files
-
-These bin/src/javadoc jars were added specifically to support Maven/Ivy which have 
-the ability to pull these down automatically as part of your build process. 
-The content of the legacy jar and the bin+sources jar are the same.
-
-As of version 3.3.0 bin/sources/javadoc jars contained in dist-maven directory
-are deployed to the Apache Maven repository after the release has been accepted
-by Apache:
-  http://people.apache.org/repo/m2-ibiblio-rsync-repository/
+![](https://gitee.com/onlycreator/draw/raw/master/img/ZAB%E6%95%B0%E6%8D%AE%E4%B8%80%E8%87%B4%E6%80%A7%E5%90%8C%E6%AD%A5%E6%B3%B3%E9%81%93%E5%9B%BE.png)
